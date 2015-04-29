@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "CreateIconsTool.h"
+#import "AutoPackageTool.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+      //  [CreateIconsTool exec];
+        [AutoPackageTool exec];
     }
     return 0;
 }

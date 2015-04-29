@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C4BEDD9D1AF0D3F300599752 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BEDD9C1AF0D3F300599752 /* main.m */; };
+		C4BEDDAD1AF0D5AD00599752 /* NSImage+LJNSImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BEDDAC1AF0D5AD00599752 /* NSImage+LJNSImage.m */; };
+		C4BEDDAF1AF0D5C200599752 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BEDDAE1AF0D5C200599752 /* AppKit.framework */; };
+		C4BEDDB41AF0D86100599752 /* CreateIconsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BEDDB31AF0D86100599752 /* CreateIconsTool.m */; };
+		C4BEDDB71AF0D86900599752 /* AutoPackageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BEDDB61AF0D86900599752 /* AutoPackageTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,16 @@
 /* Begin PBXFileReference section */
 		C4BEDD991AF0D3F300599752 /* iOSProjectHelpTools */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = iOSProjectHelpTools; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4BEDD9C1AF0D3F300599752 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C4BEDDAB1AF0D5AD00599752 /* NSImage+LJNSImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+LJNSImage.h"; sourceTree = "<group>"; };
+		C4BEDDAC1AF0D5AD00599752 /* NSImage+LJNSImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+LJNSImage.m"; sourceTree = "<group>"; };
+		C4BEDDAE1AF0D5C200599752 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C4BEDDB21AF0D86100599752 /* CreateIconsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateIconsTool.h; sourceTree = "<group>"; };
+		C4BEDDB31AF0D86100599752 /* CreateIconsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateIconsTool.m; sourceTree = "<group>"; };
+		C4BEDDB51AF0D86900599752 /* AutoPackageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoPackageTool.h; sourceTree = "<group>"; };
+		C4BEDDB61AF0D86900599752 /* AutoPackageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoPackageTool.m; sourceTree = "<group>"; };
+		C4BEDDBA1AF0D87000599752 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		C4BEDDBB1AF0D87000599752 /* masterEP.xcarchive */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = masterEP.xcarchive; sourceTree = "<group>"; };
+		C4BEDDBC1AF0D87000599752 /* toPackageChannels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = toPackageChannels.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4BEDDAF1AF0D5C200599752 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +56,7 @@
 		C4BEDD901AF0D3F300599752 = {
 			isa = PBXGroup;
 			children = (
+				C4BEDDAE1AF0D5C200599752 /* AppKit.framework */,
 				C4BEDD9B1AF0D3F300599752 /* iOSProjectHelpTools */,
 				C4BEDD9A1AF0D3F300599752 /* Products */,
 			);
@@ -57,9 +73,66 @@
 		C4BEDD9B1AF0D3F300599752 /* iOSProjectHelpTools */ = {
 			isa = PBXGroup;
 			children = (
+				C4BEDDAA1AF0D53900599752 /* Category */,
+				C4BEDDA61AF0D48E00599752 /* Tools */,
 				C4BEDD9C1AF0D3F300599752 /* main.m */,
 			);
 			path = iOSProjectHelpTools;
+			sourceTree = "<group>";
+		};
+		C4BEDDA61AF0D48E00599752 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				C4BEDDB01AF0D86100599752 /* AutoPackageTool */,
+				C4BEDDB11AF0D86100599752 /* CreateIconsTool */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		C4BEDDAA1AF0D53900599752 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C4BEDDAB1AF0D5AD00599752 /* NSImage+LJNSImage.h */,
+				C4BEDDAC1AF0D5AD00599752 /* NSImage+LJNSImage.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		C4BEDDB01AF0D86100599752 /* AutoPackageTool */ = {
+			isa = PBXGroup;
+			children = (
+				C4BEDDB81AF0D87000599752 /* 示例模板 */,
+				C4BEDDB51AF0D86900599752 /* AutoPackageTool.h */,
+				C4BEDDB61AF0D86900599752 /* AutoPackageTool.m */,
+			);
+			path = AutoPackageTool;
+			sourceTree = "<group>";
+		};
+		C4BEDDB11AF0D86100599752 /* CreateIconsTool */ = {
+			isa = PBXGroup;
+			children = (
+				C4BEDDB21AF0D86100599752 /* CreateIconsTool.h */,
+				C4BEDDB31AF0D86100599752 /* CreateIconsTool.m */,
+			);
+			path = CreateIconsTool;
+			sourceTree = "<group>";
+		};
+		C4BEDDB81AF0D87000599752 /* 示例模板 */ = {
+			isa = PBXGroup;
+			children = (
+				C4BEDDB91AF0D87000599752 /* 批量打渠道包配置 */,
+			);
+			path = "示例模板";
+			sourceTree = "<group>";
+		};
+		C4BEDDB91AF0D87000599752 /* 批量打渠道包配置 */ = {
+			isa = PBXGroup;
+			children = (
+				C4BEDDBA1AF0D87000599752 /* icon.png */,
+				C4BEDDBB1AF0D87000599752 /* masterEP.xcarchive */,
+				C4BEDDBC1AF0D87000599752 /* toPackageChannels.plist */,
+			);
+			path = "批量打渠道包配置";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +191,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4BEDDAD1AF0D5AD00599752 /* NSImage+LJNSImage.m in Sources */,
+				C4BEDDB41AF0D86100599752 /* CreateIconsTool.m in Sources */,
 				C4BEDD9D1AF0D3F300599752 /* main.m in Sources */,
+				C4BEDDB71AF0D86900599752 /* AutoPackageTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

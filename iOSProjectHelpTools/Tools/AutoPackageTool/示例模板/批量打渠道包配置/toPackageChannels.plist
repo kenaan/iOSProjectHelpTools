@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>IsValid</key>
+		<true/>
+		<key>ChannelID</key>
+		<string>Beat</string>
+		<key>ChannelName</key>
+		<string>Beat测试</string>
+	</dict>
+	<dict>
+		<key>IsValid</key>
+		<true/>
+		<key>ChannelID</key>
+		<string>AppStore</string>
+		<key>ChannelName</key>
+		<string>Apple官方下载平台</string>
+	</dict>
+	<dict>
+		<key>IsValid</key>
+		<false/>
+		<key>ChannelID</key>
+		<string>jinjiawang</string>
+		<key>ChannelName</key>
+		<string>近家网</string>
+	</dict>
+	<dict>
+		<key>IsValid</key>
+		<false/>
+		<key>ChannelID</key>
+		<string>maisheshidu</string>
+		<key>ChannelName</key>
+		<string>麦摄氏度</string>
+	</dict>
+	<dict>
+		<key>IsValid</key>
+		<false/>
+		<key>ChannelID</key>
+		<string>taohaiyun</string>
+		<key>ChannelName</key>
+		<string>陶先生IPO咖啡</string>
+	</dict>
+	<dict>
+		<key>IsValid</key>
+		<false/>
+		<key>ChannelID</key>
+		<string>jianzhiditui</string>
+		<key>ChannelName</key>
+		<string>兼职地推</string>
+	</dict>
+	<dict>
+		<key>IsValid</key>
+		<false/>
+		<key>ChannelID</key>
+		<string>shenzhenshangjiaditui</string>
+		<key>ChannelName</key>
+		<string>深圳商家地推</string>
+	</dict>
+</array>
+</plist>
