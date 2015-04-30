@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4830B0D1AF1BD64008DC70E /* NSDate+LJ.m in Sources */ = {isa = PBXBuildFile; fileRef = C4830B0C1AF1BD64008DC70E /* NSDate+LJ.m */; };
 		C4BEDD9D1AF0D3F300599752 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BEDD9C1AF0D3F300599752 /* main.m */; };
 		C4BEDDAD1AF0D5AD00599752 /* NSImage+LJNSImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BEDDAC1AF0D5AD00599752 /* NSImage+LJNSImage.m */; };
 		C4BEDDAF1AF0D5C200599752 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BEDDAE1AF0D5C200599752 /* AppKit.framework */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C4830B0B1AF1BD64008DC70E /* NSDate+LJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LJ.h"; sourceTree = "<group>"; };
+		C4830B0C1AF1BD64008DC70E /* NSDate+LJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LJ.m"; sourceTree = "<group>"; };
 		C4BEDD991AF0D3F300599752 /* iOSProjectHelpTools */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = iOSProjectHelpTools; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4BEDD9C1AF0D3F300599752 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4BEDDAB1AF0D5AD00599752 /* NSImage+LJNSImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+LJNSImage.h"; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 		C4BEDDAA1AF0D53900599752 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				C4830B0B1AF1BD64008DC70E /* NSDate+LJ.h */,
+				C4830B0C1AF1BD64008DC70E /* NSDate+LJ.m */,
 				C4BEDDAB1AF0D5AD00599752 /* NSImage+LJNSImage.h */,
 				C4BEDDAC1AF0D5AD00599752 /* NSImage+LJNSImage.m */,
 			);
@@ -193,6 +198,7 @@
 			files = (
 				C4BEDDAD1AF0D5AD00599752 /* NSImage+LJNSImage.m in Sources */,
 				C4BEDDB41AF0D86100599752 /* CreateIconsTool.m in Sources */,
+				C4830B0D1AF1BD64008DC70E /* NSDate+LJ.m in Sources */,
 				C4BEDD9D1AF0D3F300599752 /* main.m in Sources */,
 				C4BEDDB71AF0D86900599752 /* AutoPackageTool.m in Sources */,
 			);
@@ -311,6 +317,7 @@
 				C4BEDDA21AF0D3F300599752 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

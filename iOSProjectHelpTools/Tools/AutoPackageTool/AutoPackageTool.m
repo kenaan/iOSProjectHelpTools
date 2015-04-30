@@ -9,7 +9,7 @@
 #import "AutoPackageTool.h"
 #import <AppKit/AppKit.h>
 #import "NSImage+LJNSImage.h"
-
+#import "NSDate+LJ.h"
 @implementation AutoPackageTool
 
 + (void) exec{
@@ -166,8 +166,6 @@
             return ;
         }
         
-        
-        
         //将xarchive 文件 拷贝到 渠道文件夹中
         NSString * tmpArcFilePath = [channelDirPath stringByAppendingPathComponent:@"tmp.xcarchive"] ;
         NSError * err2;
@@ -178,7 +176,7 @@
         }
         //修改 xarchive bundle 中 渠道配置信息文件
         NSString * bundlePath = [AutoPackageTool getBundelPathInXArchivePath:tmpArcFilePath];
-        NSString * bundelChannelCnfPath = [bundlePath stringByAppendingPathComponent:@"DownLoadChannleInfo.plist"];
+        NSString * bundelChannelCnfPath = [bundlePath stringByAppendingPathComponent:@"DownLoadChannleInfoForEnterprise.plist"];
         if (![fm fileExistsAtPath:bundelChannelCnfPath]) {
             NSLog(@"ERROR-在 项目 Bundle 中未找到 渠道信息配置 文件");
             return;
@@ -260,7 +258,7 @@
     }];
     while (packagedCount < needsPackageCount) {
         [NSThread sleepForTimeInterval:0.2];
-        NSLog(@"正在导出 ipa 包总 , 共需要导出 %d 个 , 已经导出 %d 个",needsPackageCount,packagedCount);
+        NSLog(@"正在导出 ipa 包，总共需要导出 %d 个 , 已经导出 %d 个",needsPackageCount,packagedCount);
         //打包完毕
         if (packagedCount>=needsPackageCount) {
             [[ipaDownloadUrlDescriptions dataUsingEncoding:NSUTF8StringEncoding] writeToFile:ipaDownLoadDescriptionFilePath atomically:YES];
@@ -323,7 +321,7 @@
 }
 #pragma mark 创建用于ipa下载的 mainfest.plist
 + (BOOL) createMainfestPlistWithIpaUrl:(NSString *)ipaUrl icon512Url:(NSString *)icon512Url icon57Url:(NSString *)icon57Url bundleID:(NSString *)bundleID version:(NSString *)version subtitle:(NSString *)subtitle title:(NSString *)title toPath:(NSString *)toPath{
-    
+    NSString * tsStr=  [[NSDate date] stringWithFormat:@"yyyyMMddHHmmss"];
     NSDictionary * dic = @{
                            @"items":@[@{
                                           @"assets":@[
@@ -344,7 +342,7 @@
                                                       },
                                                   ],
                                           @"metadata":@{
-                                                  @"bundle-identifier":bundleID,
+                                                  @"bundle-identifier":[bundleID stringByAppendingString:tsStr],//解决ios8 BUG
                                                   @"bundle-version":version,
                                                   @"kind":@"software",
                                                   @"subtitle":subtitle,
