@@ -155,8 +155,12 @@
         NSString * channelResource_downHtmlUrl =[AutoPackageTool getChannelResourceDownloadUrlWithChannelDirPath:channelDirPath resourcePath:channelResource_downHtmlPath serverDownloadRootUrl:downloadRootUrl];
         
         /******************** 生成渠道信息资源 **********************/
+        if (![channelResource_mainfestPlistUrl containsString:@"https://"]) {
+            channelResource_mainfestPlistUrl = [channelResource_mainfestPlistUrl stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"];
+        }
+        NSString * linkStr = [NSString stringWithFormat:@"itms-services://?action=download-manifest&url=%@",channelResource_mainfestPlistUrl];
         //添加ipa下载描述
-        [ipaDownloadUrlDescriptions appendFormat:@"%@ : %@ \n",channelID,channelResource_downHtmlUrl];
+        [ipaDownloadUrlDescriptions appendFormat:@"%@ : %@ \n %@\n",channelID,channelResource_downHtmlUrl,linkStr];
 
         //创建渠道文件夹
         NSError * err;
@@ -259,7 +263,7 @@
     while (packagedCount < needsPackageCount) {
         [NSThread sleepForTimeInterval:0.2];
         NSLog(@"正在导出 ipa 包，总共需要导出 %d 个 , 已经导出 %d 个",needsPackageCount,packagedCount);
-        //打包完毕
+        //打包完毕 写入下载信息
         if (packagedCount>=needsPackageCount) {
             [[ipaDownloadUrlDescriptions dataUsingEncoding:NSUTF8StringEncoding] writeToFile:ipaDownLoadDescriptionFilePath atomically:YES];
         }
