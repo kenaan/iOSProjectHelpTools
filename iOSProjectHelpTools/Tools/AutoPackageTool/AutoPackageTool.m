@@ -160,8 +160,8 @@
         }
         NSString * linkStr = [NSString stringWithFormat:@"itms-services://?action=download-manifest&url=%@",channelResource_mainfestPlistUrl];
         //添加ipa下载描述
-        [ipaDownloadUrlDescriptions appendFormat:@"%@ : %@ \n %@\n",channelID,channelResource_downHtmlUrl,linkStr];
-
+        [ipaDownloadUrlDescriptions appendFormat:@"%@ %@: \n    %@\n    %@\n\n",channelID,channelName, channelResource_downHtmlUrl,linkStr];
+        
         //创建渠道文件夹
         NSError * err;
         BOOL isSucc = [fm createDirectoryAtPath:channelDirPath withIntermediateDirectories:YES attributes:nil error:&err];
