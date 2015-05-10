@@ -13,16 +13,32 @@
 @implementation AutoPackageTool
 
 + (void) exec{
+
     NSFileManager * fm = [NSFileManager defaultManager];
-    /*----------------- 渠道打包所需的元数据资源文件 ------------------*/
+    /*----------------- 说明  ------------------*/
     //渠道打包元数据信息所在目录的路径 参考项目中的 metadatas 文件夹
    /*
     该目录下需要以下资源文件:
         icon.png ： 尺寸必须大于512x512 的 app icon 图片
         toPackageChannels.plist : 要打包的渠道信息配置文件 （在项目中的 示例模板/toPackageChannels.plist 查看配置的模板）
-        masterEP.xcarchive : 母归档包(该包使用企业签名打包的) 用户导出各个渠道的ipa包
+        masterEP.xcarchive : 母归档包(该包使用企业签名打包的) 用于导出各个渠道的ipa包
     */
+    
+    /*----------------- 配置  start ------------------*/
     NSString * metadatasDirPath = @"/Users/jerry/Desktop/批量打渠道包配置";
+    
+    NSString * bundleID = @"com.sz.estay.EstayEP";
+    NSString * version = @"1.3.3";
+    NSString * subtitle =@"一呆公寓-高品质度假公寓预定平台";
+    NSString * title = @"一呆公寓";
+    //产品名称ID
+    NSString * productID = @"ydgy";//一呆公寓 （ydgy 或 djb）
+    //服务器文件下载根目录的URI
+    NSString * downloadRootUrl = @"http://app.estay.com/";
+    /*----------------- 配置  end ------------------*/
+    
+    
+    
     //源 icon 路径
     NSString * iconPath = [metadatasDirPath stringByAppendingPathComponent:@"icon.png"];
     //渠道信息配置文件
@@ -46,15 +62,6 @@
         NSLog(@"ERROR:元信息资源缺失-masterEP.xcarchive 母归档包不存在");
         return;
     }
-    /*----------------- 其他所需信息 ----------------- */
-    NSString * bundleID = @"com.sz.estay.EstayEP";
-    NSString * version = @"1.3.3";
-    NSString * subtitle =@"一呆公寓-高品质度假公寓预定平台";
-    NSString * title = @"一呆公寓";
-    //产品名称ID
-    NSString * productID = @"ydgy";//一呆公寓 （ydgy 或 djb）
-    //服务器文件下载根目录的URI
-    NSString * downloadRootUrl = @"http://app.estay.com/";
     
     /*----------------- 输出的资源路径 ----------------- */
     //输出目录

@@ -30,6 +30,7 @@
 /* Begin PBXFileReference section */
 		C4830B0B1AF1BD64008DC70E /* NSDate+LJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+LJ.h"; sourceTree = "<group>"; };
 		C4830B0C1AF1BD64008DC70E /* NSDate+LJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LJ.m"; sourceTree = "<group>"; };
+		C4AABBD41AFF365900FE91CE /* File.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = File.rtf; sourceTree = "<group>"; };
 		C4BEDD991AF0D3F300599752 /* iOSProjectHelpTools */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = iOSProjectHelpTools; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4BEDD9C1AF0D3F300599752 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4BEDDAB1AF0D5AD00599752 /* NSImage+LJNSImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+LJNSImage.h"; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 				C4BEDDAA1AF0D53900599752 /* Category */,
 				C4BEDDA61AF0D48E00599752 /* Tools */,
 				C4BEDD9C1AF0D3F300599752 /* main.m */,
+				C4AABBD41AFF365900FE91CE /* File.rtf */,
 			);
 			path = iOSProjectHelpTools;
 			sourceTree = "<group>";
