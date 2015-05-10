@@ -27,8 +27,7 @@
     /*----------------- 配置  start ------------------*/
     NSString * metadatasDirPath = @"/Users/jerry/Desktop/批量打渠道包配置";
     
-    NSString * bundleID = @"com.sz.estay.EstayEP";
-    NSString * version = @"1.3.6";
+
     NSString * subtitle =@"一呆公寓-高品质度假公寓预定平台";
     NSString * title = @"一呆公寓";
     //产品名称ID
@@ -259,6 +258,9 @@
             return;
         }
         //创建 mainfest.plist
+        NSString * version = [self getVersionNOFromXArchive:basicArchivePath];
+        NSString * bundleID = [self getBundleIDFromXArchive:basicArchivePath];
+      
         BOOL isCreateMainfestSuc = [self createMainfestPlistWithIpaUrl:channelResource_ipaUrl icon512Url:channelResource_icon512Url icon57Url:channelResource_icon57Url bundleID:bundleID version:version subtitle:subtitle title:title toPath:channelResource_mainfestPlistPath];
         if (!isCreateMainfestSuc) {
             NSLog(@"ERROR:创建渠道 manifest.plist 失败");
@@ -310,6 +312,18 @@
 #pragma mark 根据 archive Path 返回 archive中 .app文件的路径
 + (NSString *) getBundelPathInXArchivePath:(NSString * )xarchivePath{
     return [xarchivePath stringByAppendingPathComponent:@"/Products/Applications/EstayEP.app"];
+}
+#pragma mark 从 XArchive 文件中 获取版本号
++ (NSString *)getVersionNOFromXArchive:(NSString * )xarchivePath{
+    NSDictionary * infoDic = [NSDictionary dictionaryWithContentsOfFile:[xarchivePath stringByAppendingPathComponent:@"Info.plist"]];
+    NSDictionary * applicationPropertysDic = infoDic[@"ApplicationProperties"];
+    return applicationPropertysDic[@"CFBundleVersion"];
+}
+#pragma mark 从 XArchive 文件中 获取bundleID
++ (NSString *)getBundleIDFromXArchive:(NSString * )xarchivePath{
+    NSDictionary * infoDic = [NSDictionary dictionaryWithContentsOfFile:[xarchivePath stringByAppendingPathComponent:@"Info.plist"]];
+    NSDictionary * applicationPropertysDic = infoDic[@"ApplicationProperties"];
+    return applicationPropertysDic[@"CFBundleIdentifier"];
 }
 #pragma mark 创建 用于下载的html 文件
 + (void) createDownHtmlWithMainfestPlistUrl:(NSString * )mainfestUrl toPath:(NSString *)toPath{
