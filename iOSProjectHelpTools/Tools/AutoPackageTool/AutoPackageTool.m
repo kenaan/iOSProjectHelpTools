@@ -28,7 +28,7 @@
     NSString * metadatasDirPath = @"/Users/jerry/Desktop/批量打渠道包配置";
     
     NSString * bundleID = @"com.sz.estay.EstayEP";
-    NSString * version = @"1.3.3";
+    NSString * version = @"1.3.6";
     NSString * subtitle =@"一呆公寓-高品质度假公寓预定平台";
     NSString * title = @"一呆公寓";
     //产品名称ID
