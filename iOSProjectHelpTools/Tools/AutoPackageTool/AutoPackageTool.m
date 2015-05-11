@@ -166,8 +166,12 @@
         }
         NSString * linkStr = [NSString stringWithFormat:@"itms-services://?action=download-manifest&url=%@",channelResource_mainfestPlistUrl];
         //添加ipa下载描述
-        [ipaDownloadUrlDescriptions appendFormat:@"渠道标识:%@\r\n渠道名称:%@\r\n下载地址:%@\r\n\r\n\r\n",channelID,channelName, channelResource_downHtmlUrl];
-
+        [ipaDownloadUrlDescriptions appendFormat:@"渠道标识:%@\r\n渠道名称:%@\r\nIPA地址:%@\r\n下载地址:%@\r\n\r\n\r\n",channelID,channelName, linkStr,channelResource_downHtmlUrl];
+        
+        //直接生成地址时解开注释
+        //return;
+        
+        
         //创建渠道文件夹
         NSError * err;
         BOOL isSucc = [fm createDirectoryAtPath:channelDirPath withIntermediateDirectories:YES attributes:nil error:&err];
@@ -269,8 +273,8 @@
         //创建 down.html 用户提供下载页面
         [self createDownHtmlWithMainfestPlistUrl:channelResource_mainfestPlistUrl toPath:channelResource_downHtmlPath];
     }];
-    
-   // [[ipaDownloadUrlDescriptions dataUsingEncoding:NSUTF8StringEncoding] writeToFile:ipaDownLoadDescriptionFilePath atomically:YES];
+    //直接生成地址时解开注释
+    //[[ipaDownloadUrlDescriptions dataUsingEncoding:NSUTF8StringEncoding] writeToFile:ipaDownLoadDescriptionFilePath atomically:YES];
     
     while (packagedCount < needsPackageCount) {
         [NSThread sleepForTimeInterval:0.2];
