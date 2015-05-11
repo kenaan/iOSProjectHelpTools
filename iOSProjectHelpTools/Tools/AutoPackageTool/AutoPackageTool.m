@@ -25,7 +25,7 @@
     */
     
     /*----------------- 配置  start ------------------*/
-    NSString * metadatasDirPath = @"/Users/jerry/Desktop/批量打渠道包配置";
+    NSString * metadatasDirPath = @"/Users/jerry/Desktop/项目们/一呆公寓项目/批量打渠道包配置";
     
 
     NSString * subtitle =@"一呆公寓-高品质度假公寓预定平台";
@@ -166,8 +166,8 @@
         }
         NSString * linkStr = [NSString stringWithFormat:@"itms-services://?action=download-manifest&url=%@",channelResource_mainfestPlistUrl];
         //添加ipa下载描述
-        [ipaDownloadUrlDescriptions appendFormat:@"%@ %@: \n    %@\n    %@\n\n",channelID,channelName, channelResource_downHtmlUrl,linkStr];
-        
+        [ipaDownloadUrlDescriptions appendFormat:@"渠道标识:%@\r\n渠道名称:%@\r\n下载地址:%@\r\n\r\n\r\n",channelID,channelName, channelResource_downHtmlUrl];
+
         //创建渠道文件夹
         NSError * err;
         BOOL isSucc = [fm createDirectoryAtPath:channelDirPath withIntermediateDirectories:YES attributes:nil error:&err];
@@ -269,6 +269,9 @@
         //创建 down.html 用户提供下载页面
         [self createDownHtmlWithMainfestPlistUrl:channelResource_mainfestPlistUrl toPath:channelResource_downHtmlPath];
     }];
+    
+   // [[ipaDownloadUrlDescriptions dataUsingEncoding:NSUTF8StringEncoding] writeToFile:ipaDownLoadDescriptionFilePath atomically:YES];
+    
     while (packagedCount < needsPackageCount) {
         [NSThread sleepForTimeInterval:0.2];
         NSLog(@"正在导出 ipa 包，总共需要导出 %d 个 , 已经导出 %d 个",needsPackageCount,packagedCount);
